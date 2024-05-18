@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Login & Sign Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fafafa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            width: 350px;
+            background-color: #fff;
+            border: 1px solid #dbdbdb;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .container img {
+            display: block;
+            margin: 0 auto 20px;
+        }
+        .container form {
+            display: flex;
+            flex-direction: column;
+        }
+        .container form input {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #dbdbdb;
+            border-radius: 3px;
+            background-color: #fafafa;
+        }
+        .container form button {
+            padding: 10px;
+            background-color: #3897f0;
+            border: none;
+            border-radius: 3px;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .container .switch {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .container .switch a {
+            color: #3897f0;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" id="login-container">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="100">
+    <form id="login-form">
+        <input type="text" placeholder="Username or Email" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit">Log In</button>
+    </form>
+    <div class="switch">
+        Don't have an account? <a href="#" onclick="toggleForms()">Sign up</a>
+    </div>
+</div>
+
+<div class="container" id="signup-container" style="display: none;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="100">
+    <form id="signup-form">
+        <input type="email" placeholder="Email" required>
+        <input type="text" placeholder="Full Name" required>
+        <input type="text" placeholder="Username" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit">Sign Up</button>
+    </form>
+    <div class="switch">
+        Have an account? <a href="#" onclick="toggleForms()">Log in</a>
+    </div>
+</div>
+
+<script>
+    function toggleForms() {
+        const loginContainer = document.getElementById('login-container');
+        const signupContainer = document.getElementById('signup-container');
+        if (loginContainer.style.display === 'none') {
+            loginContainer.style.display = 'block';
+            signupContainer.style.display = 'none';
+        } else {
+            loginContainer.style.display = 'none';
+            signupContainer.style.display = 'block';
+        }
+    }
+</script>
+
+</body>
+</html>
